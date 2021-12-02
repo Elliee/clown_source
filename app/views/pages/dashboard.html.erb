@@ -1,0 +1,27 @@
+<h1>Welcome to your dashboard <%= @user.first_name %> <%= @user.last_name %>!</h1>
+
+<h2>Your Clowns</h2>
+<div class="clowns">
+<% @clowns.each do |clown| %>
+  <div class="clown">
+    <h3><%= clown.name %> </h3>
+    <h3><%= clown.description %> </h3>
+  </div>
+<% end %>
+</div>
+
+<h2>Your Bookings</h2>
+
+<% if @bookings.length == 0 %>
+  <p>You have no bookings!</p>
+<% else %>
+    <ul class="bookings">
+    <% @bookings.each do |booking| %>
+        <li class="booking">
+            <p><%= booking.clown.name %> from <%= booking.clown.user.first_name %> on <%= booking.start_date %> </p>
+        </li>
+    <% end %>
+    </ul>
+<% end %>
+
+

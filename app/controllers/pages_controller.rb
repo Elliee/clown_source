@@ -3,13 +3,8 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    #find the logged in user
-    #get all users clown listings
-    #display the users clown listings => user.clowns
-    #get all users bookings
-    #display all the users bookings => user.bookings
-
+    @user = current_user
+    @clowns = @user.clowns
+    @bookings = Booking.where(users_id: @user.id)
   end
-
-
 end
