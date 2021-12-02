@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+.full-screen {
+  height: 100vh;
+  background-color: grey;
+  background: asset-url('hero-image.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-middle {
+  text-align: center;
+  color: white;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+}
