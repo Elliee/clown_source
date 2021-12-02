@@ -1,0 +1,18 @@
+h1,
+h2,
+p {
+  padding: 8px;
+  margin: 8px;
+}
+
+.clowns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 8px;
+  margin: 8px;
+}
+
+.clown {
+  padding: 8px;
+  margin: 8px;
+}
