@@ -12,10 +12,14 @@
   justify-content: center;
 }
 
-.hero-middle {
+.hero-middle h1, .hero-middle h2 {
   text-align: center;
   color: white;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
                  0px 8px 13px rgba(0,0,0,0.1),
                  0px 18px 23px rgba(0,0,0,0.1);
+}
+
+.hero-middle{
+  text-align: center;
 }

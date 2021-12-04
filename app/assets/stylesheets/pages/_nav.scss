@@ -1,0 +1,21 @@
+.home-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 100px;
+}
+
+.home-logo {
+  height: 38px;
+  width: 38px;
+  background: asset-url('icon.svg');
+}
+
+.home-nav-fixed {
+  position: fixed;
+}
+
+.nav-grey {
+  background-color: grey;
+}
