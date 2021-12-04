@@ -12,10 +12,23 @@
   </head>
 
   <body>
-    <div class="home-nav">
-      <div class="home-logo"></div>
-      <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-    </div>
+
+    <% if current_page?(root_path) %>
+      <div class="home-nav home-nav-fixed">
+        <div class="home-logo"></div>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+      </div>
+    <% else %>
+      <div class="home-nav nav-grey">
+        <div class="home-logo"></div>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+
+
+
+
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
