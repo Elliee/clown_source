@@ -1,25 +1,53 @@
-<h1>Welcome to your dashboard <%= @user.first_name %> <%= @user.last_name %>!</h1>
-
-<h2>Your Clowns</h2>
-<div class="clowns">
-<% @clowns.each do |clown| %>
-  <div class="clown">
-    <h3><%= clown.name %> </h3>
-    <h3><%= clown.description %> </h3>
+<div class="clown-and-profile">
+  <div class="clowns">
+    <div class="container">
+      <h2 class="m-3 p-3">Your Clowns</h2>
+      <div class="row">
+        <% @clowns.each do |clown| %>
+          <div class="col-sm-4">
+            <div class="m-3 p-3">
+              <div class="card" style="width: 18rem;">
+                <div class="clown-image">
+                  <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.postindependent.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2016%2F10%2Fcreepyclowns-atd-100616-827x1240.jpg&f=1&nofb=1" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title"><%= clown.name %></h5>
+                  <p class="card-text"><%= clown.description %></p>
+                  <div class="edit-price-box">
+                    <a href="#" class="btn btn-primary">Edit</a>
+                    <p>$<%= clown.price %> / day</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+  <div class="profile m-3 p-3">
+    <div class="card profile-card" style="width: 18rem; ">
+      <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh3.googleusercontent.com%2F-1ytrjMLUnUA%2FWcJwccohpVI%2FAAAAAAAAwtM%2FVE5pg81wvZMoEbb9kAKC_3fPNv6YUcWzQCHMYCw%2Fs1600%2FHugh-Jackman-awesome-dp-profile-pics-MyWhatsappImages.com-246.jpg&f=1&nofb=1" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= @user.first_name %> <%= @user.last_name %></h5>
+        <a href="#" class="btn btn-primary">Create A Clown!</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="mr-5">
+  <h2>Your Bookings</h2>
+  <% if @bookings.length == 0 %>
+    <p >You have no bookings!</p>
+  <% else %>
+    <ul class="bookings">
+      <% @bookings.each do |booking| %>
+        <li class="booking">
+          <p><%= booking.clown.name %> from <%= booking.clown.user.first_name %> on <%= booking.start_date %> </p>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
 
-<h2>Your Bookings</h2>
-
-<% if @bookings.length == 0 %>
-  <p>You have no bookings!</p>
-<% else %>
-    <ul class="bookings">
-    <% @bookings.each do |booking| %>
-        <li class="booking">
-            <p><%= booking.clown.name %> from <%= booking.clown.user.first_name %> on <%= booking.start_date %> </p>
-        </li>
-    <% end %>
-    </ul>
-<% end %>
