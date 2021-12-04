@@ -2,7 +2,7 @@
 
 <% @clowns.each do |clown| %>
   <div class="">
-    <h3><%= clown.name %> </h3>
+    <h3><%= link_to clown.name, clown_path(clown) %></h3>
     <h3><%= clown.description %> </h3>
     <h3><%= clown.price %> </h3>
   </div>
