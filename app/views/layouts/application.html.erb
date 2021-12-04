@@ -12,6 +12,10 @@
   </head>
 
   <body>
+    <div class="home-nav">
+      <div class="home-logo"></div>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+    </div>
     <%= yield %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
