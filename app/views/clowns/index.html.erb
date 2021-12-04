@@ -1,1 +1,9 @@
-<h1>CLOWNS - INDEX</h1>
+<h1>CLOWNS - INDEX - SHOW ALL CLOWNS</h1>
+
+<% @clowns.each do |clown| %>
+  <div class="">
+    <h3><%= clown.name %> </h3>
+    <h3><%= clown.description %> </h3>
+    <h3><%= clown.price %> </h3>
+  </div>
+<% end %>
