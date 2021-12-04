@@ -7,6 +7,8 @@ ruby '2.7.3'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.1'
 #devise gem
 gem 'devise'
+#cloudinary gem
+gem 'cloudinary', '~> 1.16.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
