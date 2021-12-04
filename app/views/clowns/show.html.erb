@@ -1,1 +1,20 @@
-<h1>CLOWN - SHOW SINGULAR</h1>
+<div class="container">
+  <div>
+    <h1>Meet <%= @clown.name %></h1>
+  </div>
+
+  <div class="card-container">
+    <p><strong>Description:</strong> <%= @clown.description %></p>
+    <p><strong>Price:</strong> $<%=@clown.price %></p>
+      <div>
+      <% @clown.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<br>
+<div class="container">
+  <%= link_to 'Return home', clowns_path, class: "btn btn-primary" %>
+</div>
