@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
   end
 
  def create
-  @booking = Bookmark.new(booking_params)
+  @booking = Booking.new(booking_params)
   @booking.user = current_user
   @clown = Clown.find(params[:clown_id])
   @booking.clown = @clown
