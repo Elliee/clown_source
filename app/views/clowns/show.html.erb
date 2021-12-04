@@ -1,3 +1,4 @@
+
 <div class="container">
   <div>
     <h1>Meet <%= @clown.name %></h1>
@@ -17,4 +18,5 @@
 <br>
 <div class="container">
   <%= link_to 'Return home', clowns_path, class: "btn btn-primary" %>
+  <%= link_to 'edit', edit_clown_path, class: "btn btn-secondary" %>
 </div>
