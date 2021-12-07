@@ -7,7 +7,7 @@ ruby '2.7.3'
 gem 'rails', '~> 6.0.4', '>= 6.0.4.1'
 # devise gem
 gem 'devise'
-#cloudinary gem
+# cloudinary gem
 gem 'cloudinary', '~> 1.16.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -35,6 +35,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'flatpickr'
 
 group :development, :test do
   gem 'pry-byebug'
