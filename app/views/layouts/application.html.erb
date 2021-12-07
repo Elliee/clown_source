@@ -4,15 +4,11 @@
     <title>ClownSource</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
-
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <%= link_to root_path, class: "home-logo" do %>
         <%= image_tag "icon.svg" %>
@@ -49,42 +45,6 @@
         </div>
       <% end  %>
     </div>
-
-    <!--
-    <% if current_page?(root_path) %>
-      <div class="home-nav home-nav-fixed">
-        <div class="home-logo"></div>
-        <% if user_signed_in? %>
-          <div>
-            <%= link_to "Dashboard", dashboard_path, class: "btn btn-primary" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-          </div>
-        <% else  %>
-          <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-        <% end %>
-        </div>
-    <% else %>
-      <div class="home-nav nav-grey">
-        <div class="home-logo"></div>
-        <% if user_signed_in? %>
-          <div>
-            <% if current_page?(dashboard_path) %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-            <% else %>
-              <%= link_to "Dashboard", dashboard_path, class: "btn btn-primary dashboard-btn" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-            <% end %>
-          </div>
-        <% else  %>
-          <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    <% end %>
-    -->
     <%= yield %>
-    <!--
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    -->
   </body>
 </html>
