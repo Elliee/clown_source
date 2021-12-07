@@ -4,15 +4,11 @@
     <title>ClownSource</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
-
     <% if current_page?(root_path) %>
       <div class="home-nav home-nav-fixed">
         <div class="home-logo"></div>
@@ -24,7 +20,7 @@
         <% else  %>
           <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
         <% end %>
-        </div>
+      </div>
     <% else %>
       <div class="home-nav nav-grey">
         <div class="home-logo"></div>
@@ -42,12 +38,6 @@
         <% end %>
       </div>
     <% end %>
-
-
-
-
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
 </html>
