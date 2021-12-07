@@ -28,9 +28,8 @@ import 'flatpickr';
 // import { initSelect2 } from '../components/init_select2';
 import { toggleDateInputs } from '../plugins/init_flatpickr';
 
-toggleDateInputs();
-
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  toggleDateInputs();
 });

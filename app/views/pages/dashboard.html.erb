@@ -1,5 +1,4 @@
-
- <div class="clown-and-profile">
+<div class="clown-and-profile">
   <div class="clowns">
     <div class="container">
       <h2 class="m-3 p-3">Your Clowns</h2>
@@ -32,8 +31,6 @@
   </div>
   <div class="profile m-3 p-3">
     <div class="card profile-card" style="width: 18rem; ">
-     <!-- <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flh3.googleusercontent.com%2F-1ytrjMLUnUA%2FWcJwccohpVI%2FAAAAAAAAwtM%2FVE5pg81wvZMoEbb9kAKC_3fPNv6YUcWzQCHMYCw%2Fs1600%2FHugh-Jackman-awesome-dp-profile-pics-MyWhatsappImages.com-246.jpg&f=1&nofb=1" alt="Card image cap">-->
-         <%= cl_image_tag @user.photo.key, class: "card-img-top" %>
       <div class="card-body">
         <h5 class="card-title"><%= @user.first_name %> <%= @user.last_name %></h5>
         <div><%= link_to "Create a Clown!", new_clown_path, class:"btn btn-primary" %></div>
