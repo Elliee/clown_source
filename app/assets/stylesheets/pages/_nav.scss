@@ -9,7 +9,12 @@
 .home-logo {
   height: 38px;
   width: 38px;
-  background: asset-url('icon.svg');
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.home-logo:hover {
+  opacity: 0.6;
 }
 
 .home-nav-fixed {
@@ -18,4 +23,26 @@
 
 .nav-grey {
   background-color: grey;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: #F4F4F4;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.avatar {
+  border: #F4F4F4 solid 2px;
+  transition: border 0.3s ease;
+}
+
+.avatar:hover {
+  border: #7A7A7A solid 2px;
 }

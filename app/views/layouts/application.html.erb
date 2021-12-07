@@ -4,50 +4,47 @@
     <title>ClownSource</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+      <%= link_to root_path, class: "home-logo" do %>
+        <%= image_tag "icon.svg" %>
+      <% end %>
 
-    <% if current_page?(root_path) %>
-      <div class="home-nav home-nav-fixed">
-        <div class="home-logo"></div>
-        <% if user_signed_in? %>
-          <div>
-            <%= link_to "Dashboard", dashboard_path, class: "btn btn-primary" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-          </div>
-        <% else  %>
-          <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-        <% end %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <% if user_signed_in? %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item dropdown">
+              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Edit Account", edit_user_registration_path, class: "dropdown-item" %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          </ul>
         </div>
-    <% else %>
-      <div class="home-nav nav-grey">
-        <div class="home-logo"></div>
-        <% if user_signed_in? %>
-          <div>
-            <% if current_page?(dashboard_path) %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-            <% else %>
-              <%= link_to "Dashboard", dashboard_path, class: "btn btn-primary dashboard-btn" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
-            <% end %>
-          </div>
-        <% else  %>
-          <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
-        <% end %>
-      </div>
-    <% end %>
-
-
-
-
+      <% else  %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Signup", new_user_registration_path, class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      <% end  %>
+    </div>
     <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </body>
 </html>

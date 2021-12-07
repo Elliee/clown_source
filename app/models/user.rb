@@ -13,4 +13,5 @@ class User < ApplicationRecord
       "avatar-unknown.png"
     end
   end
+  has_many :bookings
 end
