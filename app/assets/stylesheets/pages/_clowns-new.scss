@@ -1,0 +1,45 @@
+.form-container h1 {
+  color: rgb(158, 158, 158);
+  font-size: 45px;
+  text-align: center;
+}
+
+.form-container p  {
+  font-size: 24px;
+  text-align: center;
+  color:rgb(158, 158, 158);
+}
+
+.form-container {
+  background-color: rgb(255, 252, 252);
+  padding: 16px;
+  width: 420px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 40px auto;
+}
+
+.button-home {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 24px;
+  border-radius: 5px;
+}
+
+.button-form {
+  border-radius: 5px;
+}
+
+.background-container-image {
+  height: 93vh;
+  background-color: grey;
+  background: asset-url('balloon.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}

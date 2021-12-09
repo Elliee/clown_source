@@ -19,6 +19,7 @@
                   <p class="card-text"><%= clown.description %></p>
                   <div class="edit-price-box">
                     <div><%= link_to "Edit", edit_clown_path(clown), class:"btn btn-primary" %></div>
+                    <div><%= link_to "Delete", clowns_path(clown), class:"btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %></div>
                     <p>$<%= clown.price %> / day</p>
                   </div>
                 </div>

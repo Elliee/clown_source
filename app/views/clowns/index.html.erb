@@ -1,7 +1,7 @@
 
 
 <div class="container">
-<h1>Browse all Clowns...</h1>
+  <div class="header-center"><h1>Find a Clown</h1></div>
 
     <div class="cards">
     <% @clowns.each do |clown| %>
@@ -16,7 +16,7 @@
           <p class="card-text"><%= clown.description %></p>
           <div class="card-info">
             <p><strong>Price: $</strong><%= clown.price %> </p>
-            <a href="#" class="btn btn-primary">Book Now!</a>
+            <a href="#" class="btn btn-primary booking-btn">Book Now!</a>
           </div>
         </div>
       </div>
