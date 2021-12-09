@@ -1,9 +1,25 @@
-<h1>CLOWNS - INDEX - SHOW ALL CLOWNS</h1>
 
-<% @clowns.each do |clown| %>
-  <div class="">
-    <h3><%= link_to clown.name, clown_path(clown) %></h3>
-    <h3><%= clown.description %> </h3>
-    <h3><%= clown.price %> </h3>
-  </div>
-<% end %>
+
+<div class="container">
+<h1>Browse all Clowns...</h1>
+
+    <div class="cards">
+    <% @clowns.each do |clown| %>
+      <div class="card"style="width: 18rem;">
+        <% if clown.photos.first  %>
+          <%= cl_image_tag clown.photos.first.key, class:"card-img-top" %>
+        <% else %>
+          <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.postindependent.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2016%2F10%2Fcreepyclowns-atd-100616-827x1240.jpg&f=1&nofb=1" alt="Card image cap">
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to clown.name, clown_path(clown)%></h5>
+          <p class="card-text"><%= clown.description %></p>
+          <div class="card-info">
+            <p><strong>Price: $</strong><%= clown.price %> </p>
+            <a href="#" class="btn btn-primary">Book Now!</a>
+          </div>
+        </div>
+      </div>
+       <% end %>
+    </div>
+</div>
