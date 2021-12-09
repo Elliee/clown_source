@@ -1,22 +1,38 @@
-
 <div class="container">
   <div>
     <h1>Meet <%= @clown.name %></h1>
   </div>
-
-  <div class="card-container">
-    <p><strong>Description:</strong> <%= @clown.description %></p>
-    <p><strong>Price:</strong> $<%=@clown.price %></p>
+  <div class="clown-main-window">
+    <div class="card-container p-3 m-3">
+      <p><strong>Description:</strong> <%= @clown.description %></p>
+      <p><strong>Price:</strong> $<%=@clown.price %></p>
       <div>
-      <% @clown.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% @clown.photos.each do |photo| %>
+          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+    </div>
+    <div class="booking-sidepane p-3 m-3">
+      <h2>Book this clown!</h2>
+      <div id='clown-booking-dates' data-unavailable="<%= @clown.unavailable_dates.to_json %>">
+        <%= simple_form_for([@clown, @booking]) do |f| %>
+          <%= f.input :start_date, as: :string, type: :text %>
+          <%= f.input :end_date, as: :string, type: :text %>
+          <%= f.submit "Book", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <% if flash[:notice] %>
+        <div class="success-notice p-3 m-3">
+          <div class="notice"><%= flash[:notice] %></div>
+          <%= link_to "Dashboard", dashboard_path, class: "btn btn-primary" %>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
-
 <br>
 <div class="container">
   <%= link_to "Back", :back, class: "btn btn-primary" %>
   <%= link_to 'edit', edit_clown_path, class: "btn btn-secondary" %>
 </div>
+

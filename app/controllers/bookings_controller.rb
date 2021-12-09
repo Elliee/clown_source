@@ -5,11 +5,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Bookmark.new(booking_params)
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
     @clown = Clown.find(params[:clown_id])
     @booking.clown = @clown
     if @booking.save
+      flash.notice = "Booking Made!"
       redirect_to clown_path(@clown)
     else
       render :new
