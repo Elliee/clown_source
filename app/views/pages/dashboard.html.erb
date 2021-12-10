@@ -48,7 +48,10 @@
       <% @bookings.each do |booking| %>
         <li class="booking">
           <p><%= booking.clown.name %> from <%= booking.clown.user.first_name %> on <%= booking.start_date %> </p>
+
         </li>
+
+
       <% end %>
     </ul>
   <% end %>

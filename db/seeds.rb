@@ -28,11 +28,11 @@ puts "user with id: #{user.id} has been created"
 # Clown.create(name: 'miky', description: 'he is very nice!', price: 12, user_id: 1)
 # puts"created clowns"
 
-booking = Booking.create(start_date:3122021, end_date:5122021, status:"bla bla bla", user_id:user.id, clown_id:1)
+booking = Booking.create(start_date:"3122021", end_date:"5122021", status:"bla bla bla", user_id:user.id, clown_id:1)
 booking.save!
 puts "booking with id: #{booking.id} has been created"
-Booking.create(start_date:4122021, end_date:8122021, status:"tell me something", user_id:1, clown_id:2)
-Booking.create(start_date:5122021, end_date:10122021, status:"This is so nice", user_id:1, clown_id:3)
+Booking.create(start_date:"4122021", end_date:"8122021", status:"tell me something", user_id:1, clown_id:2)
+Booking.create(start_date:"5122021", end_date:"10122021", status:"This is so nice", user_id:1, clown_id:3)
 # # puts"created bookings"
 #User.create(email: encrypted_password:)
 # User.create(email: "dvishuddha@gmail.com", created_at: "2021-12-03 23:31:14", updated_at: "2021-12-03 23:31:14", first_name: "VISHUDDHA", last_name: "VITHANAGE")

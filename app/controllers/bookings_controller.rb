@@ -1,7 +1,11 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %i[edit update destroy]
+  before_action :set_booking, only: %i[show edit update destroy]
   def new
     @booking = Booking.new
+  end
+
+  def show
+
   end
 
   def create
