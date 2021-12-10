@@ -1,9 +1,39 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  height: 40px;
 }
+
 .card-info {
   display: flex;
   justify-content: space-between;
+}
+
+.card-info p {
+  font-size: 18px;;
+}
+
+.card {
+box-shadow: 0px 10px 30px 1px rgba(218, 217, 217, 0.753);
+border-radius: 3px;
+}
+
+.header-center {
+  padding: 45px;
+  text-align: center;
+}
+
+.card-text {
+  font-size: 18px;
+}
+
+.booking-btn {
+  height: 40px;
+  border-radius: 5px;
+}
+
+.container {
+  width: 900px;
+  margin: 40px auto;
 }
