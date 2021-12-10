@@ -1,56 +1,80 @@
-<div class="clown-and-profile">
-  <div class="clowns">
-    <div class="container">
-      <h2 class="m-3 p-3">Your Clowns</h2>
-      <div class="row">
-        <% @clowns.each do |clown| %>
-          <div class="col-sm-4">
-            <div class="m-3 p-3">
-              <div class="card" style="width: 18rem;">
-                <div class="clown-image">
-                  <% if clown.photos.first  %>
-                    <%= cl_image_tag clown.photos.first.key, class:"card-img-top" %>
-                  <% else %>
-                    <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.postindependent.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2016%2F10%2Fcreepyclowns-atd-100616-827x1240.jpg&f=1&nofb=1" alt="Card image cap">
-                  <% end %>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title"><%= clown.name %></h5>
-                  <p class="card-text"><%= clown.description %></p>
-                  <div class="edit-price-box">
-                    <div><%= link_to "Edit", edit_clown_path(clown), class:"btn btn-primary" %></div>
-                    <div><%= link_to "Delete", clowns_path(clown), class:"btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %></div>
-                    <p>$<%= clown.price %> / day</p>
+
+<div class="container">
+
+  <ul class="nav nav-pills" id="myNavTabs">
+    <li class="active"><a class="nav-link active" href="#navtabs1" data-toggle="tab">Your Clowns</a>
+    <li><a class="nav-link " href="#navtabs2" data-toggle="tab">Your Bookings</a>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="navtabs1">
+
+      <h2 class="m-3 p-3 top-margin">Your Clowns</h2>
+      <div class="clown-and-profile">
+        <div class="clowns">
+          <div class="row">
+            <% @clowns.each do |clown| %>
+              <div class="col-sm-4">
+                <div class="m-3 p-3">
+                  <div class="card" style="width: 18rem;">
+                    <div class="clown-image">
+                      <% if clown.photos.first  %>
+                        <%= cl_image_tag clown.photos.first.key, class:"card-img-top" %>
+                      <% else %>
+                        <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.postindependent.com%2Fwp-content%2Fuploads%2Fsites%2F6%2F2016%2F10%2Fcreepyclowns-atd-100616-827x1240.jpg&f=1&nofb=1" alt="Card image cap">
+                      <% end %>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title"><%= clown.name %></h5>
+                      <p class="card-text"><%= clown.description %></p>
+                      <div class="edit-price-box">
+                        <div><%= link_to "Edit", edit_clown_path(clown), class:"btn btn-primary" %></div>
+                        <div><%= link_to "Delete", clowns_path(clown), class:"btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %></div>
+                        <p>$<%= clown.price %> / day</p>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
               </div>
-            </div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
       </div>
+
     </div>
-  </div>
-  <div class="profile m-3 p-3">
-    <div class="card profile-card" style="width: 18rem; ">
-      <div class="card-body">
-        <h5 class="card-title"><%= @user.first_name %> <%= @user.last_name %></h5>
-        <div><%= link_to "Create a Clown!", new_clown_path, class:"btn btn-primary" %></div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="mr-5">
+    <div class="tab-pane fade" id="navtabs2">
+ <div class="m-3 p-3">
   <h2>Your Bookings</h2>
-  <% if @bookings.length == 0 %>
-    <p >You have no bookings!</p>
-  <% else %>
-    <ul class="bookings">
-      <% @bookings.each do |booking| %>
-        <li class="booking">
-          <p><%= booking.clown.name %> from <%= booking.clown.user.first_name %> on <%= booking.start_date %> </p>
-        </li>
+  <div class="table-container">
+    <% if @bookings.length == 0 %>
+      <p >You have no bookings!</p>
+    <% else %>
+      <table class="table table-light table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Clown Name</th>
+            <th scope="col">Clown Owner</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @bookings.each do |booking| %>
+            <tr>
+              <td scope="row"><%= booking.clown.name %></td>
+              <td><%= booking.clown.user.first_name %></td>
+              <td><%= booking.start_date %></td>
+              <td><%= booking.end_date %></td>
+              <td><%= booking.status %></td>
+              <td><%= link_to 'Delete', booking_path(booking), :method => :delete, :data => {:confirm => 'Are you sure?'}%></td>
+            </tr>
+          <% end %>
+        </tbody>
       <% end %>
-    </ul>
-  <% end %>
-</div>
+    </div>
+  </div>
+    </div>
+  </div>
