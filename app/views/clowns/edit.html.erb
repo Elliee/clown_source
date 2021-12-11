@@ -1,17 +1,23 @@
-<h1>CLOWNS - EDIT</h1>
-<div class="container">
-  <%= simple_form_for @clown do |f| %>
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <div>
-    <% @clown.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-  </div>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
 
-    <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
+<div class="container">
+  <div class="edit-form-container">
+    <h1>Edit my clown</h1>
+    <%= simple_form_for @clown do |f| %>
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <div>
+      <% @clown.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </div>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+    <% end %>
+    </div>
+    <br>
+     <div>
+      <%= link_to "Back", :back, class: "btn btn-primary" %>
+    </div>
 
 </div>
