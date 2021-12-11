@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :clowns do
     resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[show update destroy]
+  resources :bookings, only: %i[show update destroy edit]
 
 end

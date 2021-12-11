@@ -16,7 +16,7 @@
           <p class="card-text"><%= clown.description %></p>
           <div class="card-info">
             <p><strong>Price: $</strong><%= clown.price %> </p>
-            <a href="#" class="btn btn-primary booking-btn">Book Now!</a>
+            <a><%= link_to "Book Now", clown_path(clown), class: "btn btn-primary booking-btn" %></a>
           </div>
         </div>
       </div>

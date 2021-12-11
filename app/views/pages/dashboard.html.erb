@@ -59,6 +59,7 @@
             <th scope="col">End Date</th>
             <th scope="col">Status</th>
             <th scope="col">Delete</th>
+            <th scope="col">Edit</th>
           </tr>
         </thead>
         <tbody>
@@ -70,6 +71,7 @@
               <td><%= booking.end_date %></td>
               <td><%= booking.status %></td>
               <td><%= link_to 'Delete', booking_path(booking), :method => :delete, :data => {:confirm => 'Are you sure?'}%></td>
+              <td><%= link_to 'Edit', booking_path(booking) %></td>
             </tr>
           <% end %>
         </tbody>

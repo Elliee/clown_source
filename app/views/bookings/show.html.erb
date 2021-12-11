@@ -1,21 +1,20 @@
-<h1>booking - SHOW</h1>
-<h1>Start date: <%= @booking.start_date %></h1>
-<h1>End date: <%= @booking.end_date %></h1>
+<div class="container">
+  <h1>Current booking details:</h1>
+  <p>Start date: <%= @booking.start_date %></p>
+  <p>End date: <%= @booking.end_date %></p>
 
-<div class="booking-sidepane p-3 m-3">
-      <h2>Change Booking date!</h2>
-      <div id='clown-booking-dates' data-unavailable="<%= @booking.clown.unavailable_dates.to_json %>">
-        <%= simple_form_for([@clowns, @booking]) do |f| %>
-          <%= f.input :start_date, as: :string, type: :text %>
-          <%= f.input :end_date, as: :string, type: :text %>
-          <%= f.submit "Book", class: "btn btn-primary" %>
-        <% end %>
-      </div>
-      <%= link_to "Dashboard", dashboard_path, class: "btn btn-primary" %>
-     <!-- <% if flash[:notice] %>
-        <div class="success-notice p-3 m-3">
-          <div class="notice"><%= flash[:notice] %></div>
-          <%= link_to "Dashboard", dashboard_path, class: "btn btn-primary" %>
-        </div>
-      <% end %>-->
+    <div class="booking-sidepane p-3 m-3">
+          <h2>Update Booking</h2>
+          <div id='clown-booking-dates' data-unavailable="<%= @booking.clown.unavailable_dates.to_json %>">
+            <%= simple_form_for([@clowns, @booking]) do |f| %>
+              <%= f.input :start_date, as: :string, type: :text %>
+              <%= f.input :end_date, as: :string, type: :text %>
+              <%= f.submit "Update", class: "btn btn-primary" %>
+            <% end %>
+          </div>
     </div>
+      <div>
+        <%= link_to "Dashboard", dashboard_path, class: "btn btn-primary" %>
+      </div>
+
+</div>
